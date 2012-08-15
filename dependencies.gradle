@@ -5,7 +5,7 @@ ext {
 
 libraries.commons_beanutils = 'commons-beanutils:commons-beanutils:1.8.3'
 libraries.commons_collections = 'commons-collections:commons-collections:3.2.1@jar'
-libraries.commons_io = 'commons-io:commons-io:2.3@jar'
+libraries.commons_io = 'commons-io:commons-io:2.4@jar'
 libraries.commons_lang = 'commons-lang:commons-lang:2.6'
 
 
