@@ -1,0 +1,23 @@
+
+apply plugin: 'java'
+
+apply from: "dependencies.gradle"
+apply from: "eclipse.gradle"
+
+
+subprojects {
+    apply plugin: 'java'
+
+    group = 'com.charandeepmatta'
+    version = '1.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+        maven {
+            url "http://maven.laughingpanda.org/maven2/"
+        }
+    }
+
+    sourceCompatibility = 1.6
+    targetCompatibility = 1.6
+}
