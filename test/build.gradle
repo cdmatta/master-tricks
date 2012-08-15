@@ -1,0 +1,8 @@
+dependencies {
+    compile libraries.commons_io
+    compile libraries.commons_lang
+    compile libraries.guice
+    compile libraries.spring_jdbc
+
+    runtime libraries.hsqldb
+}

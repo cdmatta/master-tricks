@@ -1,2 +1,4 @@
-include 'commons'
-include 'oracle'
+include "commons"
+include "guiced-environment"
+include "oracle"
+include "test"
