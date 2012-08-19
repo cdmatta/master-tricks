@@ -33,8 +33,8 @@ public class QueryPaginatorSpec extends GuiceSpecification<QueryPaginator> {
 
         public void paginatedResultsCanBeFetched() {
             ActorFetcher actorFetcher = getInstance(ActorFetcher.class);
-            String paginate = context.paginate("select name from actor", new Page(3, 2));
-            List<String> results = actorFetcher.runQuery(paginate);
+            String paginatedQuery = context.paginate("select name from actor", new Page(3, 2));
+            List<String> results = actorFetcher.runQuery(paginatedQuery);
             specify(results, asList("Laurence Fishburne", "Jean-Claude Van Damme"));
         }
     }
