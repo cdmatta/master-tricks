@@ -1,8 +1,11 @@
 dependencies {
+    compile project(':guiced-environment')
+    compile libraries.testing
     compile libraries.commons_io
     compile libraries.commons_lang
     compile libraries.guice
     compile libraries.spring_jdbc
 
+    runtime libraries.h2
     runtime libraries.hsqldb
 }

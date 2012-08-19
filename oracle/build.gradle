@@ -1,5 +1,6 @@
 dependencies {
     compile project(':commons')
 
+    testCompile project(':test')
     testCompile libraries.testing
 }
