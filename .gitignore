@@ -1,6 +1,11 @@
+# Eclipse
 .classpath
-.gradle/
 .project
-bin/
-build/
 .settings/
+
+# Idea
+.idea/
+.idea_modules/
+
+# Maven
+target/
