@@ -12,8 +12,16 @@
 
   <dependencies>
     <dependency>
+      <groupId>com.charandeepmatta</groupId>
+      <artifactId>commons</artifactId>
+    </dependency>
+    <dependency>
       <groupId>com.google.inject</groupId>
       <artifactId>guice</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
     </dependency>
   </dependencies>
 </project>
