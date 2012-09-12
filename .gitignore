@@ -4,6 +4,7 @@
 .settings/
 
 # Idea
+*.iml
 .idea/
 .idea_modules/
 
