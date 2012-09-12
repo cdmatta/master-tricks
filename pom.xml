@@ -22,6 +22,7 @@
     <junit.version>4.10</junit.version>
     <logback.version>1.0.7</logback.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <skipUnitTests>false</skipUnitTests>
     <slf4j.version>1.7.0</slf4j.version>
     <spring.version>3.1.2.RELEASE</spring.version>
   </properties>
@@ -89,8 +90,63 @@
             <artifactId>maven-site-plugin</artifactId>
             <version>3.1</version>
           </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>2.5.1</version>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.12.3</version>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-eclipse-plugin</artifactId>
+            <version>2.9</version>
+          </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-eclipse-plugin</artifactId>
+        <configuration>
+          <downloadSources>true</downloadSources>
+          <downloadJavadocs>false</downloadJavadocs>
+          <outputDirectory>.eclipse_classes</outputDirectory>
+          <haltOnFailure>true</haltOnFailure>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <inherited>true</inherited>
+        <configuration>
+          <skipTests>${skipUnitTests}</skipTests>
+          <forkMode>once</forkMode>
+          <argLine>-Xmx512m</argLine>
+          <includes>
+            <include>**/*Spec.java</include>
+            <include>**/*Test.java</include>
+          </includes>
+          <excludes>
+            <exclude>**/*FunctionalSpec.java</exclude>
+            <exclude>**/*IntegrationSpec.java</exclude>
+            <exclude>**/*SmokeTest.java</exclude>
+          </excludes>
+          <systemPropertyVariables>
+            <jdave.tools.specdox.format>xml</jdave.tools.specdox.format>
+            <jdave.tools.specdox.dir>${project.build.directory}/jdave</jdave.tools.specdox.dir>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 
   <dependencyManagement>
